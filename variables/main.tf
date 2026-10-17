@@ -35,6 +35,24 @@ variable "my_map" {
     key2 = "value2"
   }
 }
+
+# tuples
+variable "my_tuple" {
+  type    = tuple([string, number, string])
+  default = ["cat", 1, "dog"]
+}
+# objects
+variable "my_object" {
+  type = object({
+    name  = string
+    ports = list(number)
+  })
+  default = {
+    name  = "hello"
+    ports = [22, 80, 443]
+  }
+}
+
 # =======================
 # input variables
 variable "input_variable_example" {
