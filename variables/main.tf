@@ -36,6 +36,7 @@ variable "my_map" {
   }
 }
 # =======================
+# input variables
 variable "input_variable_example" {
   type        = string
   description = "set the name of the VPC"
@@ -49,3 +50,8 @@ resource "aws_vpc" "my_vpc" {
   }
 }
 
+# output variables
+output "example_output_variable" {
+  value = aws_vpc.my_vpc.id
+
+}
